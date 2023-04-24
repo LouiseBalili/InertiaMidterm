@@ -7,6 +7,9 @@ use App\Models\User;
 
 class SiteController extends Controller
 {
+    public function home() {
+        return inertia('Home');
+    }
 
     public function loginForm() {
         return inertia('Login');
@@ -22,8 +25,7 @@ class SiteController extends Controller
         $login = auth()->attempt($request->all());
 
         if($login)
-            return redirect('/members');
-            // dd('You are logged in!');
+            return redirect('/home');
         else
             return back()->withErrors(['authentication'=>'Invalid username and/or password.']);
     }
@@ -45,7 +47,7 @@ class SiteController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        return redirect('/signup')->with('message', 'Account successfully created.');
+        return redirect('/')->with('message', 'Account successfully created.');
     }
 
     public function logout(){

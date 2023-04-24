@@ -18,7 +18,7 @@ class CompanyFactory extends Factory
     {
         return [
             'name' => fake()->company,
-            'type' => fake()->words(3, true),
+            'type' => fake()->words(2, true),
             'address' => fake()->address,
             'net_worth' => fake()->randomFloat(2, 99999, 999999)
         ];

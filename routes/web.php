@@ -35,4 +35,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/companies', [CompanyController::class, 'store']);
     Route::get('/companies/edit/{company}', [CompanyController::class, 'edit']);
     Route::put('/companies/{company}', [CompanyController::class, 'update']);
+
+    Route::get('/home', [SiteController::class, 'home']);
 });

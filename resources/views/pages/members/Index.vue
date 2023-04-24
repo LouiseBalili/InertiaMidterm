@@ -13,57 +13,54 @@ const closeNotif = () => {
 </script>
 
 <template layout="default">
-    <!-- <div class="absolute w-full inset-x-0 top-0 bg-purple-700 p-24 mix-blend-overlay">
-        
-    </div> -->
 
-    <div class="container-md mx-auto p-8 w-3/4 -mt-56">
-        <div class="flex justify-between items-center mb-3">
-            <h1 class="text-3xl font-semibold text-white">Members</h1>
-            <Link href="/members/create" class="text-white rounded-lg border-2 border-solid hover:border-blue-500 hover:bg-gray-50 hover:text-gray-700 px-3 py-1"> + Add Member</Link>
+    <div class="container-md mx-auto p-8">
+        <div class="flex items-center mb-4 text-center ml-80">
+            <h1 class="text-4xl text-gray-300 mb-5 ml-40">List of Members</h1>
+            <Link href="/members/create" class="text-gray-300 ml-20 mb-4 rounded-lg border-2 border-solid hover:border-gray-400 hover:bg-gray-600 hover:text-gray-300 px-4 py-2"> + Add Member</Link>
         </div>
-        
-        <table class="w-full text-sm text-left text-gray 500">
-            <thead class="text-sm text-gray-700 uppercase bg-gray-50">
+
+        <table class="w-full text-sm text-left text-gray-400">
+            <thead class="text-xs uppercase bg-gray-700 text-gray-400">
                 <tr>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-5">
                         #
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-5">
                         Last Name
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-5">
                         First Name
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-5">
                         Designation
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-6 py-5">
                         Company
                     </th>
-                    <th scope="col" class="px-6 py-3 text-center">
+                    <th scope="col" class="px-6 py-5 text-center">
                         ...
                     </th>
                 </tr>
             </thead>
             <tbody v-for="member of members" :key="member.id">
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4">
+                <tr class="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
+                    <td class="px-6 py-6">
                         {{ member.id }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-6">
                         {{ member.last_name }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-6">
                         {{ member.first_name }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-6">
                         {{ member.designation }}
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-6">
                         {{ member.company.name }}
                     </td>
-                    <td class="px-6 py-4 text-center">
+                    <td class="px-6 py-6 text-center">
                         <Link :href="'/members/edit/' + member.id"><i class="fa-solid fa-pen"></i></Link>
                     </td>
                 </tr>
@@ -79,5 +76,5 @@ const closeNotif = () => {
             <button id="close-button" @click="closeNotif()"><i class="fa-solid fa-xmark"></i></button>
         </div>
     </div>
-    
+
 </template>
